@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "galeria"
+    label: "Galería de fotos"
+    folder: "_galeria"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Descripción", name: "title", widget: "string" }
+      - { label: "Foto", name: "image", widget: "image" }
+
+  - name: "journal"
+    label: "Journal — Historias"
+    folder: "_journal"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Tag (tipo · fecha)", name: "tag", widget: "string" }
+      - { label: "Extracto", name: "excerpt", widget: "text" }
+      - { label: "Fecha", name: "date", widget: "string" }
+      - { label: "Foto (opcional)", name: "image", widget: "image", required: false }
